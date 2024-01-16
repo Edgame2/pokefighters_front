@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import logo from './medias/pokemon-logo.png';
 import './App.css';
+
+import SigninForm from './pages/SigninForm';
+import Teams from './pages/Teams';
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import MyNavBar from './components/MyNavBar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App main-font pokefighter">
+      <MyNavBar color="warning" />
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="/" element={<SigninForm />} />
+          <Route path="/teams" element={<Teams />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
