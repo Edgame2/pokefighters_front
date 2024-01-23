@@ -7,6 +7,8 @@ import Teams from './pages/Teams';
 import Users from './pages/Users';
 import Fights from './pages/Fights';
 import Fighting from './pages/Fighting';
+import Leaderboard from './pages/Leaderboard';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -29,7 +31,8 @@ function App() {
           <Route path="/teams" element={<Teams />} />
           <Route path="/users" element={<Users />} />
           <Route path="/fights" element={<Fights />} />
-          <Route path="/fighting" element={<Fighting />} />
+          <Route path="/fighting/:defenser_id" element={<Fighting />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
 
         </Routes>
       </BrowserRouter>

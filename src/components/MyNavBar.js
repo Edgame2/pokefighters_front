@@ -47,12 +47,14 @@ function MyNavBar(args) {
                                     <NavLink href="/teams/">Teams</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/users/">Users</NavLink>
+                                    <NavLink href="/users/">Players</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink href="/fights/">Fights</NavLink>
                                 </NavItem>
-
+                                <NavItem>
+                                    <NavLink href="/leaderboard/">Leaderboard</NavLink>
+                                </NavItem>
                                 <NavItem>
                                     <NavLink href="#" className="btn btn-danger" onClick={logout}>Logout</NavLink>
                                 </NavItem>

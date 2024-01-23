@@ -4,3 +4,10 @@
     url("./fonts/PokemonClassic.ttf") format("truetype");
   font-weight: bold;
 }
+
+h1 {
+  font-family: "PokemonClassic";
+  font-size: 3rem;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
+}
