@@ -7,6 +7,8 @@ import Teams from './pages/Teams';
 import Users from './pages/Users';
 import Fights from './pages/Fights';
 import Fighting from './pages/Fighting';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import MyNavBar from './components/MyNavBar';
@@ -14,10 +16,10 @@ import MyNavBar from './components/MyNavBar';
 function App() {
   return (
     <div className="App main-font pokefighter">
-
+      <ToastContainer />
       <div className='row'>
         <div className='col-12'>
-          <MyNavBar color="warning" />
+          <MyNavBar />
         </div>
       </div>
       <BrowserRouter>

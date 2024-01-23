@@ -7,12 +7,16 @@ import {
     Input,
     Label
 } from 'reactstrap';
+// React Toastify
+import { toast } from 'react-toastify';
+//import 'react-toastify/dist/ReactToastify.css';
+
 import Loading from '../components/Loading';
 import Logo from '../medias/pokemon-logo.png';
 import { host as HOST } from '../config/config';
 const SigninForm = () => {
     const [formData, setFormData] = useState({
-        email: '',
+        username: '',
         password: ''
     });
     const [error, setError] = useState('');
@@ -30,13 +34,17 @@ const SigninForm = () => {
             });
             console.log(res);
 
+            // Display success message
+            toast.success('Login successfull');
+
             // Save token in local storage
             localStorage.setItem('token', res.data.token);
-            localStorage.setItem('user', JSON.stringify(res.data.user));
+            localStorage.setItem('user', { username: res.data.username, id: res.data.id });
             window.location.href = '/teams';
 
             setLoading(false);
         } catch (err) {
+            toast.error(err.response.data.message);
             setError(err.response.data.message);
             setLoading(false);
         }
@@ -44,8 +52,6 @@ const SigninForm = () => {
 
     // Handle form imputs on change
     const handleFormChange = (e) => {
-        console.log(e.target.value);
-        console.log(e.target.name);
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
@@ -62,18 +68,15 @@ const SigninForm = () => {
 
     return (
         <div>
-            <div className="row" >
-                <div className="mt-20 mb-20 pt-20" >
-                    <p>Welcome</p>
-                    <br />
+            <p></p>
+            <div className="row mt-8 mb-8" >
+                <div className="lg-12" >
                     <img src={Logo} alt="Logo" className='mb-20' />
-                    <br />
-                    <br />
                 </div>
             </div>
 
-
-            <div className="row" >
+            <p></p>
+            <div className="row mt-14" >
                 <div className='col-4'></div>
                 <div className='col-4'>
                     {loading && <div className="mt-8"><Loading /></div>}

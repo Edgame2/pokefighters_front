@@ -7,18 +7,9 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
-    NavbarText,
 } from 'reactstrap';
 
-import { Route, Routes } from 'react-router-dom';
-
-
-import SigninForm from '../pages/SigninForm';
-import SignupForm from '../pages/SignupForm';
+import { toast } from 'react-toastify';
 
 function MyNavBar(args) {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,17 +24,25 @@ function MyNavBar(args) {
         return false;
     }
 
+    // Logout user
+    const logout = () => {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        window.location.href = '/';
+        toast.success('Logout successfull');
+    };
 
     return (
         <div>
-            <Navbar {...args}>
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
+            <Navbar container="fluid" expand="sm" color="light" full={false}>
+                <NavbarBrand href="/">Poke Fighters</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
-                    <Nav className="me-auto" navbar>
 
-                        {isLoggedIn() ? (
-                            <div>
+
+                    {isLoggedIn() ? (
+                        <div>
+                            <Nav className="me-auto" navbar>
                                 <NavItem>
                                     <NavLink href="/teams/">Teams</NavLink>
                                 </NavItem>
@@ -51,29 +50,28 @@ function MyNavBar(args) {
                                     <NavLink href="/users/">Users</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/users/">Fights</NavLink>
+                                    <NavLink href="/fights/">Fights</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink href="/users/">Logout</NavLink>
-                                </NavItem>
-                            </div>
-                        ) : (
-                            <div>
-                                <NavItem>
-                                    <NavLink href="/signin/">Login</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink href="/signup/">Sign Up</NavLink>
-                                </NavItem>
-                            </div>
-                        )}
 
-                    </Nav>
-
+                                <NavItem>
+                                    <NavLink href="#" className="btn btn-danger" onClick={logout}>Logout</NavLink>
+                                </NavItem>
+                            </Nav>
+                        </div>
+                    ) : (
+                        <Nav className="ms-auto" navbar>
+                            <NavItem>
+                                <NavLink href="/">Login</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink href="/signup/">Sign Up</NavLink>
+                            </NavItem>
+                        </Nav>
+                    )}
                 </Collapse>
             </Navbar>
 
-        </div>
+        </div >
     );
 }
 
