@@ -14,7 +14,7 @@ const Leaderboard = () => {
 
     const fetchLeaderboard = async () => {
         try {
-            const response = await axios.get('', {
+            const response = await axios.get(HOST + 'fights/leaderboard', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
@@ -51,7 +51,7 @@ const Leaderboard = () => {
                                 return (
                                     <tr key={user.id}>
                                         <td>{user.username}</td>
-                                        <td>{ }</td>
+                                        <td>{user.victories}</td>
                                     </tr>
                                 )
                             })

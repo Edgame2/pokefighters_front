@@ -14,6 +14,8 @@ import { toast } from 'react-toastify';
 import Loading from '../components/Loading';
 import Logo from '../medias/pokemon-logo.png';
 import { host as HOST } from '../config/config';
+
+
 const SigninForm = () => {
     const [formData, setFormData] = useState({
         username: '',
@@ -27,7 +29,7 @@ const SigninForm = () => {
         setLoading(true);
         e.preventDefault();
         try {
-            setLoading(true);
+
             const res = await axios.post(HOST + '/users/login', {
                 username: formData.username,
                 password: formData.password

@@ -70,6 +70,7 @@ const Teams = () => {
             toast.success('Pokemon added to your team.');
             await fetchTeam();
             console.log(team);
+
         }
         catch (err) {
             toast.error(err.response.data.message);
@@ -114,6 +115,15 @@ const Teams = () => {
                 team.length === 0 && <p>No teams found</p>
             }
 
+
+            {
+                team.map(item => (
+                    <div key={item._id}>
+                        <img src={item.image} />
+                        <b>{item.name}</b>
+                    </div>
+                ))
+            }
 
         </div>
     )
