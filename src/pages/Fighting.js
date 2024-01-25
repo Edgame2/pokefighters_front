@@ -13,6 +13,7 @@ import {
 const Fighting = () => {
     //TODO: Chapter 4: Fighting
     //TODO: Add a delay the fight is happening too fast, tip: function setTimeout
+    //TODO: Fight and Conquer the Leaderboard
     //TODO: Have fun change someting else, add a loader, change the design, etc...
     //TODO (EXTRA): Add a button to go back fights list
 

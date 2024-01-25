@@ -16,6 +16,13 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import MyNavBar from './components/MyNavBar';
 
 function App() {
+
+  //TODO: Chapter 5 : Make it your own
+  //TODO: Change the design of the app, add a logo, change the colors, etc...
+  //TODO: Add a new page, add a new feature, etc...
+  //TODO: Have fun, be creative, and show us what you can do!
+  //TODO: Look at the API Code
+
   return (
     <div className="App main-font pokefighter">
       <ToastContainer />

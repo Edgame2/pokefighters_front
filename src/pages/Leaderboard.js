@@ -5,15 +5,16 @@ import { toast } from 'react-toastify';
 
 const Leaderboard = () => {
 
-    //TODO: Chapter 3: Leaderboard (Difficulty: Medium)
+    //TODO Chapter 3: Leaderboard (Difficulty: Medium)
     //TODO: Fix the code below to display the leaderboard
     //TODO: We should see the list of users and their number of wins
+    //TODO: The score is missing, url is missing
 
     const [leaderboard, setLeaderboard] = useState([]);
 
     const fetchLeaderboard = async () => {
         try {
-            const response = await axios.get(HOST + '/fights/leader', {
+            const response = await axios.get('', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }

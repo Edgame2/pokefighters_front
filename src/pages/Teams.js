@@ -14,10 +14,10 @@ import {
 
 const Teams = () => {
     //TODO: Chapter 2: My Team (Difficulty: Hard)
+    //TODO: Add a pokemon to your team, index are available here: https://www.pokemon.com/us/pokedex , only use numbers: 9, 25, 94,. No 0009 or # or other characters
     //TODO: Show the list of pokemon in the user's team. Use function map to display the list of pokemon
-    // Help Link: https://www.digitalocean.com/community/tutorials/4-uses-of-javascripts-arraymap-you-should-know
-    // Look at the Step 3 for an example
-    // use the state variable team get the list of pokemon
+    // Help Link: https://www.digitalocean.com/community/tutorials/4-uses-of-javascripts-arraymap-you-should-know , look at section 3 for an example
+    // use the state variable team get the list of pokemon, teams are 3 pokemons maximum
     // Example: https://drive.google.com/file/d/1BcGebrYq0-uMMoq1PMq9yIXKictXcs5U/view?usp=sharing
 
     const [formData, setFormData] = useState({
